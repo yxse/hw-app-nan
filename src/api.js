@@ -142,7 +142,7 @@ export type CoinConfig = {
 };
 
 function addressPrefixes(coin: CoinConfig): string[] {
-  return [coin.addressPrimaryPrefix, coin.addressSecondaryPrefix];
+  return [coin.addressPrimaryPrefix, ...coin.addressSecondaryPrefix];
 }
 
 function badAddressReason(c: CoinConfig, field: string): string {

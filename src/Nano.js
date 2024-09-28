@@ -28,11 +28,11 @@ import { BaseAPI, getAddress, signBlock, cacheBlock } from "./api";
  * const nano = new Nano(transport);
  */
 export default class Nano extends BaseAPI {
-  constructor(transport: Transport<*>) {
+  constructor(transport: Transport<*>, allowedPrefixes?: string[]) {
     super(transport, {
       coinName: "Nano",
       addressPrimaryPrefix: "nano_",
-      addressSecondaryPrefix: "xrb_"
+      addressSecondaryPrefix: allowedPrefixes || ["xrb_"]
     });
   }
 
